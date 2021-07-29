@@ -1,0 +1,106 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{% extends 'base.html.twig' %}
+
+{% block title %}Add Product{% endblock %}
+ {% block stylesheets %}
+             <link rel="stylesheet" href="https://bootswatch.com/4/litera/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="{{ asset('css/app.css') }}"> 
+{% endblock %}
+
+{% block body %}
+
+
+         
+
+ 
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+
+
+ <link rel="stylesheet" href="https://bootswatch.com/4/litera/bootstrap.min.css"> <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" integrity="sha256-+N4/V/SbAFiW1MPBCXnfnP9QSN3+Keu+NlB+0ev/YKQ=" crossorigin="anonymous"/>
+         
+<div class="card" style="width: 18rem;">
+  <img class="card-img-top" src="..." alt="Card image cap">
+
+<form action="{{ path('admin_edit_product', {id: product.id}) }}" method="post">
+  <ul class="list-group list-group-flush">
+    <li class="list-group-item">
+     <input type="text" 
+      class="form-control" 
+      id="exampleFormControlInput1" 
+      value="{{product.title}}"name="title"></li>
+        
+
+           <input type="text" 
+      class="form-control" 
+      id="exampleFormControlInput1" 
+      value="{{product.image}}"name="image"></li>
+   
+
+        <input type="text" 
+      class="form-control" 
+      id="exampleFormControlInput1" 
+      value="{{product.price}}" name="price"></li>
+ 
+  </ul>
+  <div class="card-body">
+
+
+     <div class="switch">
+    <label>
+      Off
+      <input type="checkbox" name="visible">
+      <span class="lever"></span>
+      On
+    </label>
+  </div>
+
+     <button type="submit" class="btn btn-info" >Modifier</button>
+   
+  </div>
+
+
+
+
+
+
+
+  </form>
+</div>
+
+
+
+
+
+{% endblock %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

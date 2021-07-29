@@ -1,0 +1,59 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello AdminController!{% endblock %}
+
+{% block body %}
+    <div class="bg-light p-3">
+        <h1>Vos produits</h1>
+    </div>
+
+{% if products| length > 0 %}
+  <div class=" d-flex float-right"> <a href="{{path('admin_add')}}" class="btn btn-success btn-lg active" role="button" aria-pressed="true">ajouter<i class="fas fa-plus"></i></a> </div>
+<table class="table">
+<thead><tr>
+    <th>Produit</th>
+    <th>Prix</th>
+
+    <th>action</th>
+  </tr>
+  </thead>
+  <tbody>
+  
+ {% for product in products %} 
+  
+   <tr>
+    <td>{{product.title}}</td>
+       <td>{{product.price}}</td>
+  
+     
+  
+    <td><a href ="{{path('admin_del',{'id':product.id})}}" class="btn btn-danger btn-sm"> <i class="fas fa-trash"></i></a>
+    <a href ="{{path('admin_edit' , {'id':product.id})}}"" class="btn btn-info btn-sm"> <i class="fas fa-edit"></i></a>
+    
+    
+    </td>
+  </tr>
+  {% endfor %}
+  </tbody>
+
+  <tfoot>
+
+  
+  </tfoot>
+ 
+</table>
+
+
+
+
+
+
+
+
+
+
+{% else %}
+    <p>Surprise, c'est vide !</p>
+
+    {% endif %}
+{% endblock %}

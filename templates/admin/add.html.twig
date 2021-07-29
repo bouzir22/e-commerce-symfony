@@ -1,0 +1,27 @@
+
+
+
+
+
+
+
+{% extends 'base.html.twig' %}
+
+{% block title %}Add Product{% endblock %}
+ {% block stylesheets %}
+             <link rel="stylesheet" href="https://bootswatch.com/4/litera/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="{{ asset('css/app.css') }}"> 
+{% endblock %}
+
+{% block body %}
+
+<h1> Create new Product</h1>
+{{form(form)}}
+
+
+        
+
+
+
+
+{% endblock %}
